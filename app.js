@@ -10,7 +10,7 @@ var user = os.userInfo();
 // display information stored
 console.log(user);
 
-fs.appendFile('greetings.txt', `Hello {user.username}!` ,function (err) {
+fs.appendFile('greetings.txt', `Hello ${user.username}!` ,function (err) {
   if (err) {
     console.log('Unable to write to file');
   }
