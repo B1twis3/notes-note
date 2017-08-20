@@ -1,4 +1,4 @@
-console.log('starting app');
+console.log('starting app.js');
 
 // using require to add modules;
 const fs = require('fs');
