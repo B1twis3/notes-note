@@ -12,7 +12,7 @@ var user = os.userInfo();
 // console.log(user);
 
 // use filesystem module with error handling callback;
-fs.appendFile('greetings.txt', `Hello ${user.username}!` ,function (err) {
+fs.appendFile('greetings.txt', `Hello ${user.username}! You are ${notes.age} years old.` ,function (err) {
   if (err) {
     console.log('Unable to write to file');
   }
