@@ -8,6 +8,9 @@ const notes = require('./notes.js');
 result = notes.addNote();
 console.log(result);
 
+sum = notes.Add(1, 5);
+console.log(`The total is ${sum}`)
+
 // add user variable to store user information;
 // var user = os.userInfo();
 

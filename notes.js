@@ -10,3 +10,7 @@ module.exports.addNote = () => {
     console.log('Add note');
     return 'New note';
 };
+
+module.exports.Add = function (a, b) {
+  return a + b;
+}
