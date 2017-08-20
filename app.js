@@ -8,10 +8,8 @@ const notes = require('./notes.js');
 // add user variable to store user information;
 var user = os.userInfo();
 
-/*
-// display information stored;
-console.log(user);
-*/
+// // display information stored;
+// console.log(user);
 
 // use filesystem module with error handling callback;
 fs.appendFile('greetings.txt', `Hello ${user.username}!` ,function (err) {
