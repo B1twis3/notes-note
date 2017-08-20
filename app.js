@@ -15,12 +15,13 @@ fs.appendFile('greetings.txt', `Hello ${user.username}!` ,function (err) {
   if (err) {
     console.log('Unable to write to file');
   }
+  console.log('The data was append to file');
 });
 
 /*
-// same way of using a callback for error handling done differntly
+// same way of using a callback for error handling done differently
 fs.appendFile('greetings.txt', `Hello ${user.username}!`, (err) => {
-  if (err) throw  err;
-    console.log('The data was append to file');
+  if (err) throw  err;    // error handling
+    console.log('The data was append to file'); // when everthing goes well
 });
 */
