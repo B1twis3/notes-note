@@ -6,30 +6,30 @@ const os = require('os');
 const _ = require('lodash');
 const notes = require('./notes.js');
 
+console.log("Value is a string? :",  _.isString(true));
+console.log("Value is a string? :", _.isString("Mischa"));
+console.log("Value is a string? :", _.isString("1234"));
+console.log("Value is a string? :", _.isString(1234));
+console.log("Value is a Bool? :", _.isBoolean(true));
+
+// Use of the uniq utility from the lodash package
+var myArray = new Array(1, 1, 2, 3, 5, 4, 3, 2, 5);
+console.log("First");
+console.log(myArray);
+
+var filteredArray = _.uniq(myArray);
+console.log("Second");
+console.log(myArray);
+console.log(filteredArray);
+
+var sortedArray = filteredArray.sort();
+console.log("Third");
+console.log(myArray);
+console.log(filteredArray);
+console.log(sortedArray);
+
 result = notes.addNote();
 console.log(result);
 
 sum = notes.Add(1, 5);
 console.log(`The total is ${sum}`)
-
-// add user variable to store user information;
-// var user = os.userInfo();
-
-// // display information stored;
-// console.log(user);
-
-// use filesystem module with error handling callback;
-// fs.appendFile('greetings.txt', `Hello ${user.username}! You are ${notes.age} years old.` ,function (err) {
-//   if (err) {
-//     console.log('Unable to write to file');
-//   }
-//   console.log('The data was append to file');
-// });
-
-/*
-// same way of using a callback for error handling done differently
-fs.appendFile('greetings.txt', `Hello ${user.username}!`, (err) => {
-  if (err) throw  err;    // error handling
-    console.log('The data was append to file'); // when everthing goes well
-});
-*/
