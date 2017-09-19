@@ -22,6 +22,12 @@ var duplicateNotes = notes.filter((note) => {
   return note.title === title;
 });
 
+// if (duplicateNotes.lenght === 0) {
+//   notes.push(note);
+//   fs.writeFileSync('notes-data.json', JSON.stringify(notes));
+// }
+// };
+
 if (duplicateNotes == 0) {
   notes.push(note);
   fs.writeFileSync('notes-data.json', JSON.stringify(notes));
