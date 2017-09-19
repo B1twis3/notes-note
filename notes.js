@@ -16,22 +16,24 @@ try {
 
 }
 
-// // duplicateNotes in ES6 style
-// var duplicateNotes = notes.filter((note) => notes.title === title);
-var duplicateNotes = notes.filter((note) => {
-  return note.title === title;
-});
+// // duplicateNotes in old style
+// var duplicateNotes = notes.filter((note) => {
+//   return note.title === title;
+// });
 
-// if (duplicateNotes.lenght === 0) {
+// if (duplicateNotes == 0) {
 //   notes.push(note);
 //   fs.writeFileSync('notes-data.json', JSON.stringify(notes));
-// }
+//   }
 // };
 
-if (duplicateNotes == 0) {
+// duplicateNotes in ES6 style
+var duplicateNotes = notes.filter((note) => note.title === title);
+
+if (duplicateNotes.length === 0) {
   notes.push(note);
   fs.writeFileSync('notes-data.json', JSON.stringify(notes));
-}
+  }
 };
 
 var getAll = () => {
