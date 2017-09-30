@@ -5,34 +5,22 @@ const fs = require('fs');
 var addNote = (title, body) => {
   var notes = [];
   var note = {
-    title: title,
-    body: body
+    title,
+    body
+  };
+
+  try {
+    var notesString = fs.readFileSync('notes-data.json');
+    notes = JSON.parse(notesString);
+  } catch (e) {
+
   }
 
-try {
-  var notesString = fs.readFileSync('notes-data.json');
-  notes = JSON.parse(notesString);
-} catch (e) {
+  var duplicateNotes = notes.filter((note) => note.title === title);
 
-}
-
-// // duplicateNotes in old style
-// var duplicateNotes = notes.filter((note) => {
-//   return note.title === title;
-// });
-
-// if (duplicateNotes == 0) {
-//   notes.push(note);
-//   fs.writeFileSync('notes-data.json', JSON.stringify(notes));
-//   }
-// };
-
-// duplicateNotes in ES6 style
-var duplicateNotes = notes.filter((note) => note.title === title);
-
-if (duplicateNotes.length === 0) {
-  notes.push(note);
-  fs.writeFileSync('notes-data.json', JSON.stringify(notes));
+  if (duplicateNotes.length === 0) {
+    notes.push(note);
+    fs.writeFileSync('notes-data.json', JSON.stringify(notes));
   }
 };
 
@@ -45,11 +33,10 @@ var getNote = (title) => {
 };
 
 var removeNote = (title) => {
-    console.log('Removing note', title);
+  console.log('Removing note', title);
 };
 
 module.exports = {
-  // addNote: addNote  // may be shorted
   addNote,
   getAll,
   getNote,
