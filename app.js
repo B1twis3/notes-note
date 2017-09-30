@@ -16,6 +16,13 @@ if (command === 'list') {
   notes.getAll();
 } else if (command === 'add') {
   var note = notes.addNote(argv.title, argv.body);
+    if (_.isEmpty(note)) {
+      console.log('Title already exists');
+    } else {
+      console.log('New title created');
+      console.log(`Title : ${note.title}`);
+      console.log(`Text  : ${note.body}`);
+    }
 } else if (command === 'read') {
   notes.getNote(argv.title);
 } else if (command === 'remove') {
